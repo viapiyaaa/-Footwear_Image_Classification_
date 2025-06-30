@@ -3,6 +3,7 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
+import os
 
 # Konfigurasi halaman
 st.set_page_config(page_title="Footwear Classifier", page_icon="👟", layout="centered")
@@ -10,7 +11,8 @@ st.set_page_config(page_title="Footwear Classifier", page_icon="👟", layout="c
 # Load model
 @st.cache_resource
 def load_model():
-    model.save("model.keras")
+    model_path = os.path.join(os.path.dirname(__file__), 'model.keras')
+    model = tf.keras.models.load_model(model_path)
     return model
 
 model = load_model()
