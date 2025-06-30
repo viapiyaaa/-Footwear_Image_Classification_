@@ -51,8 +51,11 @@ elif page == "🧠 Klasifikasi":
     uploaded_file = st.file_uploader("📤 Upload gambar...", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
-        img = Image.open(uploaded_file).convert("RGB")
-        st.image(img, caption="🖼️ Gambar yang Diupload", use_container_width=True)
+        try:
+            img = Image.open(uploaded_file).convert("RGB")
+            st.image(img, caption="🖼️ Gambar yang Diupload", use_container_width=True)
+        except UnidentifiedImageError:
+            st.error("❌ File yang diupload bukan gambar yang valid.")
 
         # Preprocessing
         img_resized = img.resize((150, 150))
