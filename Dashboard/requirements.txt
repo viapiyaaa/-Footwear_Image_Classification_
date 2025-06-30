@@ -12,7 +12,7 @@ annotated-types==0.7.0
 anyio==4.9.0
 argon2-cffi==23.1.0
 argon2-cffi-bindings==21.2.0
-array_record==0.7.1
+array_record==0.7.2
 arviz==0.21.0
 astropy==7.0.1
 astropy-iers-data==0.2025.4.21.0.37.6
