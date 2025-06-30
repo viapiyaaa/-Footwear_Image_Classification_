@@ -10,7 +10,7 @@ st.set_page_config(page_title="Footwear Classifier", page_icon="👟", layout="c
 # Load model
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model('model.keras')
+    model.save("model.keras")
     return model
 
 model = load_model()
